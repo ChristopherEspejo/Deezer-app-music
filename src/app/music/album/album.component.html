@@ -1,0 +1,31 @@
+<h2 class="result">Album</h2>
+<div class="informacion animate__animated animate__fadeIn">
+    <img src="{{cancionesAlbum.cover_big}}" alt="">    
+    <div class="infoAlbum">
+        <h3>{{cancionesAlbum.artist.name}}</h3>
+        <h4>{{cancionesAlbum.title}}</h4>
+    </div>
+</div>
+
+<div class="cabecera">
+  
+  <div *ngIf="cancionesAlbum" class="container">
+    <h2 class="result">Canciones</h2>
+    <div class="row">
+      <div *ngFor="let item of cancionesAlbum.tracks.data.slice(0,8)" class="card animate__animated animate__fadeIn">
+        <i class="play fas fa-play" (click)="traerSong(item.id)"></i>
+        <img src="{{ cancionesAlbum.cover_medium}}" alt="" />
+        <h3>{{ item.title }}</h3>
+        <h4>{{ item.artist.name }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="idCancion">
+    <app-widget
+      class="animate__animated animate__fadeInUp"
+      [idCancion]="idCancion"
+    ></app-widget>
+  </div>
+
+  <button (click)="volver()">volver atras</button>

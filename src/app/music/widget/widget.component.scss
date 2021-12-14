@@ -1,0 +1,64 @@
+.widget-container {
+  display: flex;
+  height: 100px;
+
+  left: 0%;
+  
+  bottom: 0;
+ 
+  background: #eb5757;
+  width: 100%;
+   
+    position: absolute;
+  padding-bottom: 0;
+   
+}
+.info{
+  margin-top: 24px;
+  margin-left: 15px;
+}
+
+.info h4{
+  
+
+/* 14-bold-qs */
+
+
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+}
+.info h5{
+ 
+
+/* 12-regular-qs */
+
+margin-top: 8px;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+}
+audio{
+  margin-top: 20px;
+  width: 1000px;
+  margin-left: 300px;
+  outline: none;
+
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #eb5757;
+  color:#eb5757;
+}

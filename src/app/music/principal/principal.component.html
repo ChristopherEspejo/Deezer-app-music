@@ -1,0 +1,45 @@
+<div class="cabecera">
+  <div class="input">
+    <i class="fas fa-search"></i>
+    <input
+      (keyup.enter)="buscar()"
+      #txtBuscar
+      placeholder="Buscar"
+      type="text"
+    />
+  </div>
+  <div class="user">
+    <i class="fas fa-user"></i>
+    <h3>Franchesco</h3>
+  </div>
+</div>
+
+<h2 class="result">Resultados</h2>
+<div *ngIf="resultadosAlbum" class="container">
+  <h2 class="result">Canciones</h2>
+  <div class="row">
+    <div *ngFor="let item of resultadosAlbum " class="card animate__animated animate__fadeIn">
+      <i class="play fas fa-play" (click)="traerSong(item.id)"></i>
+      <img src="{{ item.album.cover_medium }}" alt="" />
+      <h3>{{ item.title_short }}</h3>
+      <h4>{{ item.artist.name }}</h4>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="resultadosAlbumes" class="container">
+  <h2 class="result">Albumes</h2>
+  <div class="row">
+    <div *ngFor="let item of resultadosAlbumes" class="card animate__animated animate__fadeIn">
+      <i class="play fas fa-play" (click)="verAlbum(item.id)"></i>
+      <img src="{{ item.cover_big }}" alt="" />
+      <h3>{{ item.title }}</h3>
+    </div>
+  </div>
+</div>
+<div *ngIf="idCancion">
+  <app-widget
+    class="animate__animated animate__fadeInUp"
+    [idCancion]="idCancion"
+  ></app-widget>
+</div>
